@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magento
+*
+* NOTICE OF LICENSE
+*
+ * @category   Payment
+ * @package    Arpalinks_Nextpay
+ * @copyright  Copyright (c) 2017 Nextpay (http://www.nextpay.ir)
+*/
+-->
+<config>
+	<modules>
+		<Arpalinks_Nextpay>
+			<version>1.0.1</version>
+		</Arpalinks_Nextpay>
+	</modules>
+
+    <global>
+        <models>
+            <nextpay>
+                <class>Arpalinks_Nextpay_Model</class>
+            </nextpay>
+        </models>
+
+        <helpers>
+            <nextpay>
+                <class>Arpalinks_Nextpay_Helper</class>
+            </nextpay>
+        </helpers>
+
+        <resources>
+            <nextpay_setup>
+                <setup>
+                    <module>Arpalinks_Nextpay</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </nextpay_setup>
+            <nextpay_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </nextpay_write>
+            <nextpay_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </nextpay_read>
+        </resources>
+
+        <blocks>
+            <nextpay>
+				<class>Arpalinks_Nextpay_Block</class>
+			</nextpay>
+        </blocks>
+    </global>
+
+    <frontend>
+        <secure_url>
+            <nextpay_redirect>/nextpay/redirect</nextpay_redirect>
+        </secure_url>
+        <routers>
+            <nextpay>
+                <use>standard</use>
+                <args>
+                    <module>Arpalinks_Nextpay</module>
+                    <frontName>nextpay</frontName>
+                </args>
+            </nextpay>
+        </routers>
+        <translate>
+            <modules>
+                <Arpalinks_Nextpay>
+                    <files>
+                        <default>Arpalinks_Nextpay.csv</default>
+                    </files>
+                </Arpalinks_Nextpay>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <nextpay>
+                    <file>nextpay.xml</file>
+                </nextpay>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Arpalinks_Nextpay>
+                    <files>
+                        <default>Arpalinks_Nextpay.csv</default>
+                    </files>
+                </Arpalinks_Nextpay>
+            </modules>
+        </translate>
+    </adminhtml>
+
+	<arpalinks>
+		<nextpay>
+			<verify_url>http://www.nextpay.ir</verify_url>
+		</nextpay>
+	</arpalinks>
+
+    <default>
+        <payment>
+            <nextpay>
+                <active>0</active>
+                <model>nextpay/nextpay</model>
+								<order_status>1</order_status>
+                <second_order_status>3</second_order_status>
+                <allowspecific>0</allowspecific>
+                <title>Nextpay Online Payment</title>
+								<gateway>0</gateway>
+								<payer_Id>0</payer_Id>
+								<pgwpay_url>0</pgwpay_url>
+            </nextpay>
+        </payment>
+    </default>
+
+</config>

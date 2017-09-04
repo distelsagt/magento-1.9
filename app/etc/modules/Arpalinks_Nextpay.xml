@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Arpalinks_Nextpay>
+      <active>true</active>
+      <codePool>community</codePool>
+	  <depends>
+	    <Mage_Payment />
+	  </depends>
+	  <version>1.0.1</version>
+  </Arpalinks_Nextpay>
+  </modules>
+</config>

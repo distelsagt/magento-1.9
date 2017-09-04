@@ -1,0 +1,23 @@
+<?php
+ /**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * @category   Payment
+ * @package    Arpalinks_Nextpay
+ * @copyright  Copyright (c) 2017 Nextpay (http://www.nextpay.ir)
+ */
+?>
+
+<?php
+
+	echo $this->getMethod()->getTitle() . '<br/>';
+
+	if ($this->getInfo()->getLastTransId() == '') {
+		echo '<em>' . $this->__('You will be redirected to Nextpay website when you place an order.') . '</em>';
+	} else {
+		echo $this->__('Nextpay Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
+	}
+
+?>
